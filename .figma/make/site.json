@@ -1,0 +1,10 @@
+{
+  "description": "Offers an elegant, responsive platform for restobar customers to explore menus, view galleries, make reservations, and access contact info seamlessly.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

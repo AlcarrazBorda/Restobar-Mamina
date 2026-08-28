@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-gold: #c9a84c;
+  --color-gold-light: #e0c876;
+  --color-gold-dark: #9a7830;
+  --color-obsidian: #080808;
+  --color-charcoal: #111111;
+  --color-carbon: #1a1a1a;
+  --color-graphite: #282828;
+  --color-slate: #3d3d3d;
+  --color-ash: #6b6b6b;
+  --color-mist: #a0a0a0;
+  --color-fog: #d0d0d0;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #080808;
+  color: #d0d0d0;
+  font-family: 'Outfit', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #111; }
+::-webkit-scrollbar-thumb { background: #c9a84c44; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #c9a84c88; }
+
+/* Gold divider ornament */
+.gold-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.gold-divider::before,
+.gold-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #c9a84c66);
+}
+.gold-divider::after {
+  background: linear-gradient(to left, transparent, #c9a84c66);
+}
+
+/* Section heading */
+.section-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  color: #e0c876;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+}
+
+.section-subheading {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c9a84c;
+}
+
+/* Gold button */
+.btn-gold {
+  display: inline-block;
+  padding: 0.75rem 2.25rem;
+  background: transparent;
+  border: 1px solid #c9a84c;
+  color: #c9a84c;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+  text-decoration: none;
+}
+.btn-gold:hover {
+  background: #c9a84c;
+  color: #080808;
+}
+
+.btn-gold-solid {
+  display: inline-block;
+  padding: 0.75rem 2.25rem;
+  background: #c9a84c;
+  border: 1px solid #c9a84c;
+  color: #080808;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+}
+.btn-gold-solid:hover {
+  background: #e0c876;
+  border-color: #e0c876;
+}
+
+/* Nav link */
+.nav-link {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #a0a0a0;
+  transition: color 0.2s;
+  text-decoration: none;
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #c9a84c;
+  transition: width 0.25s;
+}
+.nav-link:hover {
+  color: #c9a84c;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Form input */
+.form-input {
+  width: 100%;
+  background: #1a1a1a;
+  border: 1px solid #282828;
+  color: #d0d0d0;
+  padding: 0.75rem 1rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form-input:focus {
+  border-color: #c9a84c66;
+}
+.form-input::placeholder {
+  color: #6b6b6b;
+}
+
+/* Menu card */
+.menu-card {
+  background: #111111;
+  border: 1px solid #1f1f1f;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.menu-card:hover {
+  border-color: #c9a84c44;
+  transform: translateY(-2px);
+}
+
+/* Gallery item */
+.gallery-item {
+  overflow: hidden;
+  position: relative;
+}
+.gallery-item img {
+  transition: transform 0.5s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+.gallery-item .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, #08080888 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
